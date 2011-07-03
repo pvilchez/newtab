@@ -75,9 +75,7 @@ button span {
   box-pack: center;
   -moz-box-flex: 1;
   -moz-box-pack: center;
-  /* Expand to take up all available horizontal space.  */
   -webkit-box-flex: 1;
-  /* Center child dots. */
   -webkit-box-pack: center;
 }
 
@@ -109,27 +107,28 @@ button span {
 .dot:hover {
   background-color: rgba(0, 0, 0, .05);
 }
+
+#right-sidebar {
+	position: absolute;
+	top:0;
+	right:0;
+	width: 200px;
+	height: 100%;
+	background-color: grey;
+}
+
 #recently-closed-menu-button {
   background: none;
   border: 0;
   -webkit-appearance: none;
   -webkit-box-align: start;
 }
+
 .logo{
 	width: 50px;
 	height:auto;
 }
-#content {
-	height:100%;
-	overflow: auto;
-	margin-left:80px;
-	margin-bottom: 50px;
-	display: -webkit-box;
-	-webkit-box-align: center;
-	-webkit-box-flex: 1;
-	-webkit-box-pack: center;
-	//background-color:black;
-}
+
 #footer {
   background-color: rgba(255, 255, 255, 1);
   bottom: 0;
@@ -164,10 +163,18 @@ button span {
 #footer-content span {
   color: #888;
 }
+
+#content {
+	height:100%;
+	overflow: auto;
+	margin-left:80px;
+	margin-bottom: 50px;
+	display: -webkit-box;
+	-webkit-box-align: center;
+	-webkit-box-flex: 1;
+	-webkit-box-pack: center;
+}
 #center{
-//	width: 500px;
-	
-	//background-color: black;	
 }
 #todoItems{
 	list-style-type: none;
@@ -178,7 +185,7 @@ button span {
 	-webkit-box-orient: vertical;
 	-webkit-padding-start: 0;
 
-  width: 100%;
+  	width: 100%;
 	margin: 0;
 }
 #todoItems li{

@@ -1,0 +1,11 @@
+{
+  "name": "New Tab Page",
+  "version": "0.1",
+  "incognito": "split",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": [
+    "http://*/"
+  ]
+}

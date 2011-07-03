@@ -1,48 +1,3 @@
-<html>
-
-<head>
-<title>New Tab!</title>
-<link id="themecss" rel="stylesheet" href="test2.css"/>
-
-</head>
-
-<body> 
-  <div id="left-sidebar"> 
-    <div id="left-sidebar-border"></div> 
-    <div id="left-sidebar-content"> 
-      
- 
-      <ul id="dot-list"> 
-        <li class="dot" tabindex="0" role="button"><img src="f_logo.png" class="logo"></img><span></span></li> 
-        <li class="dot" tabindex="0" role="button"><img src="y_logo.png" class="logo"></img><span></span></li>
-        <li class="dot" tabindex="0" role="button"><img src="r_logo.png" class="logo"></img><span></span></li> 
-        <li class="dot" tabindex="0" role="button"><img src="m_logo.png" class="logo"></img><span></span></li> 
-        <li class="dot" tabindex="0" role="button"><img src="fcd_logo.png" class="logo"></img><span></span></li> 
-        <li class="dot" tabindex="0" role="button"><img src="t_logo.png" class="logo"></img><span></span></li> 
-      </ul> 
-     
-    </div> 
-  </div>
-  <div id="footer">
-  	<div id="footer-border"></div> 
-    <div id="footer-content">
-    <button id="recently-closed-menu-button"> 
-        <span i18n-content="recentlyclosed">Recently closed</span> 
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oIGRQbOY8MjgMAAAA8SURBVBjTY2BAAzdv3vwPBAzImAGbInSFWBU9f/4cRSFWRb9+/UJRiFMRTOGNGzf+k28SUW4iynfo4QQAj22WmutXxVsAAAAASUVORK5CYII="> 
-      </button> 
-    </div>
-    </div>
-  </div>
-  <div id="content">
-  	<div id="center">
-  	<ul id="todoItems">
-  	</ul>
-  	<input type="text" id="todo" name="todo" placeholder="What do you need to do?" style="width: 200px;" onkeypress="keyPress(event);">
-  	<input type="submit" id="submit" value="Add Item" onclick="addTodo(); return false;">
-  	</div>
-  </div> 
-</body> 
-<script>
 function keyPress(e){
 	if (window.event) { e = window.event; }
     if (e.keyCode == 13){document.getElementById('submit').click();}
@@ -162,6 +117,3 @@ function init(){
 }
 
 window.addEventListener("DOMContentLoaded", init(), false);
-	
-</script>
-</html>
