@@ -48,3 +48,4 @@ I had these in mind when I started:
 *	Add notifications from other services (facebook, twitter, etc.).
 *	Chrome's 'Recently closed' functionality. (unlikely. *sadface*).
 *	Maybe make the sidebar auto-generated, using favicons, rather than hardcoding in li's?
+*	Actually package this as a .crx file.
