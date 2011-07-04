@@ -1,52 +1,46 @@
 <html>
-
 <head>
-<title>New Tab!</title>
-<link id="themecss" rel="stylesheet" href="style/test2.css"/>
+	<title>New Tab!</title>
+	<link id="themecss" rel="stylesheet" href="style/test2.css"/>
 </head>
 
 <body> 
-  <div id="left-sidebar"> 
-    <div id="left-sidebar-border"></div> 
-    <div id="left-sidebar-content"> 
-      
- 
-      <ul id="dot-list"> 
-        <li class="dot" role="button"><img src="img/f_logo.png" class="logo"></img><span></span></li> 
-        <li class="dot" role="button"><img src="img/y_logo.png" class="logo"></img><span></span></li>
-        <li class="dot" role="button"><img src="img/r_logo.png" class="logo"></img><span></span></li> 
-        <li class="dot" role="button"><img src="img/m_logo.png" class="logo"></img><span></span></li> 
-        <li class="dot" role="button"><img src="img/fcd_logo.png" class="logo"></img><span></span></li> 
-        <li class="dot" role="button"><img src="img/t_logo.png" class="logo"></img><span></span></li> 
-      </ul> 
-     
-    </div> 
-  </div>
-  <div id="right-sidebar">
-  	<div id="right-sidebar-content">
-  	<ul id="right-sidebar-list">
-  	</ul>
-  	</div>
-  </div>
-  <div id="footer">
-  	<div id="footer-border"></div> 
-    <div id="footer-content">
-    <button id="recently-closed-menu-button"> 
-        <span i18n-content="recentlyclosed">Recently closed</span> 
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oIGRQbOY8MjgMAAAA8SURBVBjTY2BAAzdv3vwPBAzImAGbInSFWBU9f/4cRSFWRb9+/UJRiFMRTOGNGzf+k28SUW4iynfo4QQAj22WmutXxVsAAAAASUVORK5CYII="> 
-    </button> 
-    </div>
-    </div>
-  </div>
-  <div id="content">
-  	<div id="center">
-  	<ul id="todoItems">
-  	</ul>
-  	<input type="text" id="todo" name="todo" tabindex="1" placeholder="What do you need to do?" style="width: 200px;" onkeypress="keyPress(event);">
-  	<input type="submit" id="submit" value="Add Item" onclick="addTodo(); return false;">
-  	</div>
-  </div>
-
+	<div id="left-sidebar"> 
+		<div id="left-sidebar-border"></div> 
+    	<div id="left-sidebar-content"> 
+			<ul id="dot-list"> 
+				<li class="dot" role="button"><img src="img/f_logo.png" class="logo"></img></li> 
+				<li class="dot" role="button"><img src="img/y_logo.png" class="logo"></img></li>
+				<li class="dot" role="button"><img src="img/r_logo.png" class="logo"></img></li> 
+				<li class="dot" role="button"><img src="img/m_logo.png" class="logo"></img></li> 
+				<li class="dot" role="button"><img src="img/fcd_logo.png" class="logo"></img></li> 
+				<li class="dot" role="button"><img src="img/t_logo.png" class="logo"></img></li> 
+			</ul>
+		</div>
+	</div>
+	<div id="right-sidebar">
+		<div id="right-sidebar-content">
+			<ul id="right-sidebar-list">
+			</ul>
+		</div>
+	</div>
+	<div id="footer">
+		<div id="footer-border"></div> 
+		<div id="footer-content">
+			<button id="recently-closed-menu-button"> 
+				<span id="recentlyclosed">Recently closed</span> 
+				<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oIGRQbOY8MjgMAAAA8SURBVBjTY2BAAzdv3vwPBAzImAGbInSFWBU9f/4cRSFWRb9+/UJRiFMRTOGNGzf+k28SUW4iynfo4QQAj22WmutXxVsAAAAASUVORK5CYII="> 
+			</button> 
+		</div>
+	</div>
+	<div id="content">
+		<div id="center">
+			<ul id="todoItems">
+			</ul>
+			<input type="text" id="todo" name="todo" tabindex="1" placeholder="What do you need to do?" style="width: 200px;" onkeypress="keyPress(event);">
+			<input type="submit" id="submit" value="Add Item" onclick="addTodo(); return false;">
+		</div>
+	</div>
 </body>
 <script src="scripts/app.js"></script>
 <script src="scripts/fetch.js"></script>

@@ -1,6 +1,7 @@
-function keyPress(e){
+function keyPress(e) {
+	'use strict';
 	if (window.event) { e = window.event; }
-    if (e.keyCode == 13){document.getElementById('submit').click();}
+	if (e.keyCode === 13) {document.getElementById('submit').click(); }
 }
 
 var app = {};
@@ -8,19 +9,21 @@ app.indexedDB = {};
 
 app.indexedDB.db = null;
 
-app.indexedDB.open = function() {
+app.indexedDB.open = function () {
+	'use strict';
 	var request = webkitIndexedDB.open("list", "db description.");
 	
-	request.onsuccess = function(e) {
-		var v = "1.0";
+	request.onsuccess = function (e) {
+		var v, db, setVrequest;
+		v = "1.0";
 		app.indexedDB.db = e.target.result;
-		var db = app.indexedDB.db;
+		db = app.indexedDB.db;
 		
-		if(v!=db.version) {
-			var setVrequest = db.setVersion(v);
+		if (v !== db.version) {
+			setVrequest = db.setVersion(v);
 			
 			setVrequest.onfailure = app.indexedDB.onerror;
-			setVrequest.onsuccess = function(e) {
+			setVrequest.onsuccess = function (e) {
 				var store = db.createObjectStore("todo", {keyPath: "timeStamp"});
 				
 				app.indexedDB.getAllTodoItems();
@@ -29,57 +32,38 @@ app.indexedDB.open = function() {
 		app.indexedDB.getAllTodoItems();
 	};
 	request.onfailure = app.indexedDB.onerror;
-}
+};
 
-app.indexedDB.addTodo = function(todoText) {
-	var db = app.indexedDB.db;
-	var trans = db.transaction(["todo"], webkitIDBTransaction.READ_WRITE, 0);
-	var store = trans.objectStore("todo");
-	var request = store.put({
+app.indexedDB.addTodo = function (todoText) {
+	'use strict';
+	var db, trans, store, request;
+	db = app.indexedDB.db;
+	trans = db.transaction(["todo"], webkitIDBTransaction.READ_WRITE, 0);
+	store = trans.objectStore("todo");
+	request = store.put({
 		"text": todoText,
 		"timeStamp" : new Date().getTime()
 	});
 	
-	request.onsuccess = function(e) {
+	request.onsuccess = function (e) {
 		app.indexedDB.getAllTodoItems();
 	};
 	
-	request.onerror = function(e) {
+	request.onerror = function (e) {
 		console.log("Add Error: ", e.value);
 	};
 };
 
-app.indexedDB.getAllTodoItems = function() {
-	var todos = document.getElementById("todoItems");
-	todos.innerHTML = "";
-	
-	var db = app.indexedDB.db;
-	var trans = db.transaction(["todo"], webkitIDBTransaction.READ_WRITE, 0);
-	var store = trans.objectStore("todo");
-	
-	var keyRange = webkitIDBKeyRange.lowerBound(0);
-	var cursorRequest = store.openCursor(keyRange);
-	
-	cursorRequest.onsuccess = function(e) {
-		var result = e.target.result;
-		if(!!result == false)
-			return;
-			
-		renderTodo(result.value);
-		result.continue();
-	};
-	
-	cursorRequest.onerror = app.indexedDB.onerror;
-};
-
 function renderTodo(row) {
-	var todos = document.getElementById("todoItems");
-	var li = document.createElement("li");
-	var a = document.createElement("a");
-	var t = document.createTextNode(row.text);
+	'use strict';
+	var todos, li, a, t;
+	todos = document.getElementById("todoItems");
+	li = document.createElement("li");
+	a = document.createElement("a");
+	t = document.createTextNode(row.text);
 	t.data = row.text;
 	
-	a.addEventListener("click", function() {
+	a.addEventListener("click", function () {
 		app.indexedDB.deleteTodo(row.timeStamp);
 	}, false);
 	
@@ -90,29 +74,58 @@ function renderTodo(row) {
 	todos.appendChild(li);
 }
 
-app.indexedDB.deleteTodo = function(id) {
-	var db = app.indexedDB.db;
-	var trans = db.transaction(["todo"], webkitIDBTransaction.READ_WRITE, 0);
-	var store = trans.objectStore("todo");
+app.indexedDB.getAllTodoItems = function () {
+	'use strict';
+	var todos, db, trans, store, keyRange, cursorRequest;
+	todos = document.getElementById("todoItems");
+	todos.innerHTML = "";
 	
-	var request = store.delete(id);
+	db = app.indexedDB.db;
+	trans = db.transaction(["todo"], webkitIDBTransaction.READ_WRITE, 0);
+	store = trans.objectStore("todo");
 	
-	request.onsuccess = function(e) {
-    	app.indexedDB.getAllTodoItems();  // Refresh the screen
-  	};
-
-  	request.onerror = function(e) {
-    	console.log("Delete Error: ", e);
-  	};
+	keyRange = webkitIDBKeyRange.lowerBound(0);
+	cursorRequest = store.openCursor(keyRange);
+	
+	cursorRequest.onsuccess = function (e) {
+		var result = e.target.result;
+		if (!!result === false) {
+			return;
+		}
+		renderTodo(result.value);
+		result.continue();
+	};
+	
+	cursorRequest.onerror = app.indexedDB.onerror;
 };
 
-function addTodo(){
+app.indexedDB.deleteTodo = function (id) {
+	'use strict';
+	var db, trans, store, request;
+	db = app.indexedDB.db;
+	trans = db.transaction(["todo"], webkitIDBTransaction.READ_WRITE, 0);
+	store = trans.objectStore("todo");
+	
+	request = store.delete(id);
+	
+	request.onsuccess = function (e) {
+		app.indexedDB.getAllTodoItems();	/*Refresh the screen*/
+	};
+
+	request.onerror = function (e) {
+		console.log("Delete Error: ", e);
+	};
+};
+
+function addTodo() {
+	'use strict';
 	var todo = document.getElementById('todo');
 	app.indexedDB.addTodo(todo.value);
 	todo.value = '';
 }
 
-function init(){
+function init() {
+	'use strict';
 	app.indexedDB.open();
 }
 
