@@ -1,14 +1,19 @@
 Chrome Newtab Extension Readme
 
-about:			A custom page design to override chrome://newtab.
+about:			
+	A custom page design to override chrome://newtab.
 
-author:			Paul Vilchez (@pvilchez)
+author:			
+	Paul Vilchez (@pvilchez)
 
-last updated:		July 3 '11
+last updated:		
+	July 3 '11
 
-tested on:		Chrome 12.0.742.112; Mac OS X Leopard
+tested on:		
+	Chrome 12.0.742.112; Mac OS X Leopard
 
-unpacked files:		index.html
+unpacked files:		
+			index.html
 
 			img/[logo].png x 6
 
@@ -20,7 +25,8 @@ unpacked files:		index.html
 
 			style/style.css
 
-version:		1.0				
+version:		
+	1.0				
 
 == Description ==
 
