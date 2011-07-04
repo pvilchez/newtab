@@ -131,7 +131,6 @@ forrst_xhr.onreadystatechange = function () {
 				console.log("wtf?");	
 			}
 		}
-
 	}
 };
 forrst_xhr.send();
