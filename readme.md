@@ -1,5 +1,7 @@
 Chrome Newtab Extension Readme
 
+note: the .crx file in this repo has my username in the source, so it won't work for anyone else. :/
+
 about:			
 	A custom page design to override chrome://newtab.
 
