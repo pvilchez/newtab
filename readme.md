@@ -13,6 +13,7 @@ tested on:
 	Chrome 12.0.742.112; Mac OS X Leopard
 
 unpacked files:		
+
 			index.html
 
 			img/[logo].png x 6
