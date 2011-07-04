@@ -57,13 +57,19 @@ button span {
 	-webkit-box-orient: vertical;
 	-webkit-box-pack: center;
 }
+#icon {
+	width: 100%;
+	height: 100%;
+	text-decoration: none;	
+}
 .dot {
   border-right: 5px solid rgba(0, 0, 0, .1);
   color: rgba(0, 0, 0, 0.2);
   cursor: pointer;
   font-size: 9pt;
   height: 60px;
-  margin: 15px 0;
+  margin: 10px 0;
+  padding-top: 5px;
   text-align: left;
   width: 100%;
 
@@ -153,7 +159,7 @@ button span {
 #todoItems a{
 	color: #dd4b39;
 	cursor: pointer;
-	}
+}
 #todoItems a:hover {
   background-color: rgba(0, 0, 0, .05);
 }
